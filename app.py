@@ -16,8 +16,6 @@ def load_data():
 df = load_data()
 
 # ---------------- SESSION ----------------
-if "favorites" not in st.session_state:
-    st.session_state.favorites = []
 
 if "started" not in st.session_state:
     st.session_state.started = False
@@ -202,13 +200,7 @@ else:
 
                 st.link_button("Open App", row["app_link"])
 
-                if st.button("❤️ Save", key=i):
-                    st.session_state.favorites.append(row["app_name"])
 
-    # FAVORITES
-    st.sidebar.markdown("## ❤️ Saved Apps")
-    for fav in st.session_state.favorites:
-        st.sidebar.write(fav)
 
 # ---------------- FOOTER ----------------
 st.markdown("---")
